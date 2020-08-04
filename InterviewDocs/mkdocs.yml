@@ -1,4 +1,4 @@
-site_name: gf-vue-admin在线文档
+site_name: Interview文档
 site_author: 'SliverHorn'
 repo_name: 'Interview'
 repo_url: 'https://github.com/SliverHorn/Interview'
@@ -6,13 +6,42 @@ site_url: 'https://sliverhorn.github.io/'
 
 copyright: 'Copyright &copy; 2020 - 2020 SliverHorn'
 
-# Configuration, https://gitlab.com/lramage/mkdocs-gitbook-theme
+# Configuration, https://squidfunk.github.io/mkdocs-material/
 theme:
-#  name: 'rtd-dropdown'
-  name: 'amelia'
+  name: 'material'
+  palette:
+    primary: 'pink'
+    accent: 'indigo'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+
+extra_javascript: ['https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML','mathjaxhelper.js']
 
 nav:
-- 简介: 'index.md'
+  - 简介: 'index.md'
+  - WaitGroup: 'goroutine/WaitGroup.md'
+  - 第一题: 'questions/1.md'
+  - 第二题: 'questions/2.md'
+  - 第三题: 'questions/3.md'
+  - 第四题: 'questions/4.md'
+  - 第五题: 'questions/5.md'
+  - 第六题: 'questions/6.md'
+  - 第七题: 'questions/7.md'
+  - 第八题: 'questions/8.md'
+  - 第九题: 'questions/9.md'
+  - 第十题: 'questions/10.md'
+  - 第十一题: 'questions/11.md'
+
+markdown_extensions:
+  - admonition
+  - mdx_math:
+      enable_dollar_delimiter: true  #for use of inline $..$
+  - codehilite: # https://squidfunk.github.io/mkdocs-material/extensions/codehilite/
+      linenums: true
+      guess_lang: true
+  - toc:
+      permalink: true
 
 
 extra:
