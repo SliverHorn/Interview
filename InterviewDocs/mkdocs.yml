@@ -1,0 +1,21 @@
+site_name: gf-vue-admin在线文档
+site_author: 'SliverHorn'
+repo_name: 'Interview'
+repo_url: 'https://github.com/SliverHorn/Interview'
+site_url: 'https://sliverhorn.github.io/'
+
+copyright: 'Copyright &copy; 2020 - 2020 SliverHorn'
+
+# Configuration, https://gitlab.com/lramage/mkdocs-gitbook-theme
+theme:
+#  name: 'rtd-dropdown'
+  name: 'amelia'
+
+nav:
+- 简介: 'index.md'
+
+
+extra:
+  social:
+    - type: 'github'
+      link: 'https://github.com/SliverHorn'
