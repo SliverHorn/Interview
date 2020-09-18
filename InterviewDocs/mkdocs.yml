@@ -25,13 +25,6 @@ nav:
   - 第二题: 'questions/2.md'
   - 第三题: 'questions/3.md'
   - 第四题: 'questions/4.md'
-  - 第五题: 'questions/5.md'
-  - 第六题: 'questions/6.md'
-  - 第七题: 'questions/7.md'
-  - 第八题: 'questions/8.md'
-  - 第九题: 'questions/9.md'
-  - 第十题: 'questions/10.md'
-  - 第十一题: 'questions/11.md'
 
 markdown_extensions:
   - admonition

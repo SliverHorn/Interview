@@ -1,17 +1,9 @@
-package GoRoutine
+package main
 
 import (
 	"fmt"
 	"sync"
 )
-/*
-WaitGroup
-- 理解WaitGroup的实现,核心是==CAS==的使用
-- Add与Done应该放在哪里?
-	- Add放在goroutine外
-	- Done放在goroutine中
-	- 逻辑复杂是建议使用defter保证调用
- */
 
 // WaitGroup是一个结构体,不能copy是因为函数是值拷贝
 func ErrorWaitGroup1() {
@@ -36,4 +28,24 @@ func ErrorWaitGroup2() {
 			defer wg.Done()
 		}(i)
 	}
+}
+
+// WaitGroup的Add 很大会有影响吗?
+func ErrorWaitGroup3() {
+	var wg sync.WaitGroup
+	for i := 0; i < 10; i++ {
+		wg.Add(100)
+		go func(i int) {
+			fmt.Println(i)
+			defer wg.Done()
+			wg.Add(-100)
+		}(i)
+	}
+	fmt.Println("Finished")
+}
+
+func main() {
+	ErrorWaitGroup1()
+	ErrorWaitGroup2()
+	ErrorWaitGroup3()
 }
