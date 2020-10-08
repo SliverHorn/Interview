@@ -75,5 +75,16 @@ func TestStackLink_IsEmpty(t *testing.T) {
 		t.Errorf("want:%v, got:%v\n",want, got)
 	}
 	t.Logf("want:%v, got:%v\n",want, got)
+}
 
+func TestStackLink_Print(t *testing.T) {
+	var sl StackLink
+	sl.Push(6)
+	sl.Push(7)
+	got := sl.Print()
+	want := []interface{}{7, "<-",6}
+	if len(want) != len(got) {
+		t.Errorf("want:%v, got:%v\n",want, got)
+	}
+	t.Logf("want:%v, got:%v\n",want, got)
 }

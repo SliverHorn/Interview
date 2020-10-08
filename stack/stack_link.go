@@ -9,23 +9,24 @@ StackLink:栈的链式存储结构体
 4. Length: 返回栈的长度
 5. IsEmpty: 判断栈是否为空
 
- */
+*/
 
 type StackLinkInterface interface {
 	Pop() interface{}
 	Peer() interface{}
 	Push(v interface{})
+	Print() []interface{}
 	Length() int
 	IsEmpty() bool
 }
 
 type StackLink struct {
-    Top *Node
-    Len int
+	Top *Node
+	Len int
 }
 
 type Node struct {
-    Value interface{}
+	Value   interface{}
 	Pointer *Node
 }
 
@@ -44,6 +45,22 @@ func (l *StackLink) Push(v interface{}) {
 	node := &Node{Value: v, Pointer: l.Top}
 	l.Top = node
 	l.Len++
+}
+
+func (l *StackLink) Print() (s []interface{}) {
+	for ; l.Len != 0; l.Top = l.Top.Pointer {
+		if !l.IsEmpty() {
+			if l.Top.Value == nil {
+				s = append(s, l.Peer())
+			}
+			s = append(s, l.Peer())
+			if l.Len != 1 {
+				s = append(s, "<-")
+			}
+			l.Len--
+		}
+	}
+	return s
 }
 
 func (l *StackLink) Length() int {
