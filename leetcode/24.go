@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type ListNode24 struct {
 	Val  int
@@ -9,13 +11,13 @@ type ListNode24 struct {
 
 func main() {
 	root := &ListNode24{
-		Val:  1,
+		Val: 1,
 		Next: &ListNode24{
-			Val:  2,
+			Val: 2,
 			Next: &ListNode24{
-				Val:  3,
+				Val: 3,
 				Next: &ListNode24{
-					Val:  4,
+					Val: 4,
 				},
 			},
 		},
@@ -25,7 +27,7 @@ func main() {
 }
 
 func swapPairs(head *ListNode24) *ListNode24 {
-	if head == nil || head.Next == nil{
+	if head == nil || head.Next == nil {
 		return head
 	}
 	firstNext := head.Next
